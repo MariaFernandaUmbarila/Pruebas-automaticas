@@ -8,7 +8,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import *
 import pandas as pd
-import os, csv
+import os, csv, time
 import pyautogui
 
 #Cambio de foto de perfil por una foto no válida
@@ -56,11 +56,6 @@ class TestCP005b():
         self.driver.find_element(By.ID, "file-input").send_keys(r)
         self.driver.find_element(By.NAME, "update").click()
 
-        pyautogui.hotkey('esc')
-        #Esperar para que el elemento siguiente aparezca en pantalla
-        self.driver.implicitly_wait(2)
-        self.driver.find_element(By.CSS_SELECTOR, ".fa-sign-out-alt").click()
-
         try:
 
           #Verificar que se haya realizado la publicación
@@ -73,6 +68,13 @@ class TestCP005b():
             'No se realizo el cambio de imagen de perfil', 
             f'{e}-{p}-{r}']
           )
+
+          pyautogui.hotkey('esc')          
+          #Esperar para que el elemento siguiente aparezca en pantalla
+          time.sleep(2)
+          self.driver.find_element(By.NAME, "update").click()
+          time.sleep(1)
+          self.driver.find_element(By.CSS_SELECTOR, ".fa-sign-out-alt").click()
         
         except NoSuchElementException:  
 
@@ -82,7 +84,9 @@ class TestCP005b():
             'Fallida', 
             'Imagen de usuario fue modificada', 
             f'{e}-{p}-{r}']
-          )                    
+          ) 
+
+          continue                   
 
       except NoSuchElementException:  
 

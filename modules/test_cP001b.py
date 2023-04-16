@@ -56,17 +56,7 @@ class TestCP001b():
         try:
 
           #Busca el mensaje de error
-          self.driver.find_element(By.XPATH, "//p[contains(text(), 'This email is already use ')]")
-
-          #Log para el caso de éxito
-          log.append([
-            contador,
-            'Exitosa', 
-            'Usuario no se crea porque ya existe', 
-            f'{n}-{u}-{e}-{p}']
-          )
-
-        except NoSuchElementException:  
+          self.driver.find_element(By.CSS_SELECTOR, ".fa-sign-out-alt")
 
           #Log para el caso fallido
           log.append([
@@ -76,10 +66,20 @@ class TestCP001b():
             f'{n}-{u}-{e}-{p}']
           )
 
-          #Intenta cerrar sesión para seguir con el siguiente
-          self.driver.refresh()
+          #Busca el mensaje de error
           self.driver.find_element(By.CSS_SELECTOR, ".fa-sign-out-alt").click()
 
+        except NoSuchElementException:  
+
+          #Log para el caso fallido
+          log.append([
+            contador,
+            'Exitosa', 
+            'Creacion de usuario no realizada', 
+            f'{n}-{u}-{e}-{p}']
+          )
+
+          self.driver.refresh()        
           continue             
 
       return log
