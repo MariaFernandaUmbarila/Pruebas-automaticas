@@ -98,7 +98,6 @@ class TestCP003a():
     nuevaInstancia = TestCP003a()
     nuevaInstancia.setup_method()
     ejecucion = nuevaInstancia.test_cP003a()
-    print(ejecucion)
 
     with open('./results/result_cp003a.csv', 'w+', newline='') as file:
       
