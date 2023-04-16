@@ -71,7 +71,7 @@ def generarCP002b():
 
         for i in rangoA:
 
-            email = f'casoexiste{i}@software.com'
+            email = f'casonoexiste{i}@software.com'
             password = 'PruebaTuCan'
 
             writer.writerow([email, password])
@@ -251,6 +251,3 @@ def main(casoGenerar):
         case 12: generarCP006b()
         case 13: generarTodos()
         case _: print("Error en la ejecución")
-
-
-main(13)

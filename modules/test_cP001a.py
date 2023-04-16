@@ -69,7 +69,7 @@ class TestCP001a():
 
         except NoSuchElementException:  
 
-          #Log para el caso de éxito
+          #Log para el caso fallido
           log.append([
             contador,
             'Fallida', 

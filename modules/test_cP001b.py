@@ -55,7 +55,7 @@ class TestCP001b():
 
         try:
 
-          #Intenta cerrar sesión para seguir con el siguiente
+          #Busca el mensaje de error
           self.driver.find_element(By.XPATH, "//p[contains(text(), 'This email is already use ')]")
 
           #Log para el caso de éxito
@@ -68,7 +68,7 @@ class TestCP001b():
 
         except NoSuchElementException:  
 
-          #Log para el caso de éxito
+          #Log para el caso fallido
           log.append([
             contador,
             'Fallida', 
