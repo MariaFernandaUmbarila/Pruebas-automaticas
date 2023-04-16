@@ -2,7 +2,7 @@ import csv
 import os, re
 
 #Rango para uso de los ciclos for
-rangoA = range(50,60)
+rangoA = range(220,230)
 
 #Generar archivo para el caso de prueba CP001a
 def generarCP001a(): 
@@ -251,3 +251,6 @@ def main(casoGenerar):
         case 12: generarCP006b()
         case 13: generarTodos()
         case _: print("Error en la ejecución")
+
+
+main(13)
