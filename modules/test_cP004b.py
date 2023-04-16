@@ -62,7 +62,7 @@ class TestCP004b():
           #Busca el mensaje de error
           self.driver.find_element(By.XPATH, "//p[contains(text(), ' This username is already use ')]")
 
-          #Log para el caso fallido
+          #Log para el caso exitoso
           log.append([
             contador,
             'Exitosa', 
@@ -91,7 +91,7 @@ class TestCP004b():
           contador,
           'Fallida', 
           'Login de usuario fallido', 
-          f'{e}-{p}']
+          f'{e}-{p}-{u}']
         )
 
         continue      

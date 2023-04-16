@@ -108,9 +108,8 @@ def generarCP003b():
 
             email = f'casoprueba{i}@software.com'
             password = 'PruebaTuCan'
-            text = f''
 
-            writer.writerow([email, password, text])
+            writer.writerow([email, password, ''])
 
 #Generar archivo para el caso de prueba CP004a
 def generarCP004a():

@@ -59,14 +59,14 @@ class TestCP004a():
 
         if self.driver.find_element(By.CLASS_NAME, "username").text == f'@{u}':
 
-          #Log para el caso fallido
+          #Log para el caso exitoso
           log.append([
             contador,
             'Exitosa', 
             'Nombre de usuario ha sido modificado', 
             f'{e}-{p}-{u}']
           )  
-          
+
         else:
 
           #Log para el caso fallido
@@ -88,7 +88,7 @@ class TestCP004a():
           contador,
           'Fallida', 
           'Login de usuario fallido', 
-          f'{e}-{p}']
+          f'{e}-{p}-{u}']
         )
 
         continue      
