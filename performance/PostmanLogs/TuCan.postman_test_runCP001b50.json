@@ -1,0 +1,249 @@
+{
+	"id": "9f5fd0cf-6402-4be2-a792-f03752905820",
+	"name": "TuCan",
+	"timestamp": "2023-05-15T18:13:24.328Z",
+	"collection_id": "22914286-ddb7dabe-0177-4036-8cab-fce717134490",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 0,
+	"delay": "1000",
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-05-15T18:11:49.272Z",
+	"totalFail": 50,
+	"results": [
+		{
+			"id": "2a8389c2-e7ed-48f1-a022-0dc31719f16c",
+			"name": "CP001b",
+			"url": "http://localhost:8080/twitter-clone/handle/handleSignUp.php",
+			"time": 870,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Body matches string": false
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 0,
+					"fail": 50
+				}
+			},
+			"times": [
+				910,
+				875,
+				904,
+				935,
+				948,
+				410,
+				348,
+				340,
+				167,
+				509,
+				687,
+				962,
+				856,
+				934,
+				919,
+				872,
+				933,
+				934,
+				918,
+				903,
+				872,
+				787,
+				904,
+				902,
+				871,
+				919,
+				918,
+				823,
+				635,
+				574,
+				572,
+				934,
+				918,
+				872,
+				887,
+				919,
+				838,
+				764,
+				839,
+				599,
+				890,
+				430,
+				603,
+				886,
+				685,
+				884,
+				851,
+				932,
+				870,
+				870
+			],
+			"allTests": [
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				},
+				{
+					"Body matches string": false
+				}
+			]
+		}
+	],
+	"count": 50,
+	"totalTime": 39512,
+	"collection": {
+		"requests": [
+			{
+				"id": "2a8389c2-e7ed-48f1-a022-0dc31719f16c",
+				"method": "POST"
+			}
+		]
+	}
+}
