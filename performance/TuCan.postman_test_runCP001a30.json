@@ -1,0 +1,169 @@
+{
+	"id": "a0ed5eb0-dabd-45d6-8da0-8cb01dea6931",
+	"name": "TuCan",
+	"timestamp": "2023-05-15T17:47:44.494Z",
+	"collection_id": "22914286-ddb7dabe-0177-4036-8cab-fce717134490",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 30,
+	"delay": "1000",
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-05-15T17:46:43.667Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "5d2a1e91-6f43-4682-9f5c-3e505b22ebad",
+			"name": "CP001a",
+			"url": "http://localhost:8080/twitter-clone/handle/handleSignUp.php",
+			"time": 828,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 30,
+					"fail": 0
+				}
+			},
+			"times": [
+				875,
+				890,
+				930,
+				839,
+				733,
+				828,
+				814,
+				859,
+				871,
+				906,
+				906,
+				859,
+				940,
+				949,
+				859,
+				876,
+				968,
+				937,
+				782,
+				890,
+				906,
+				891,
+				595,
+				875,
+				856,
+				922,
+				844,
+				890,
+				905,
+				828
+			],
+			"allTests": [
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				}
+			]
+		}
+	],
+	"count": 30,
+	"totalTime": 26023,
+	"collection": {
+		"requests": [
+			{
+				"id": "5d2a1e91-6f43-4682-9f5c-3e505b22ebad",
+				"method": "POST"
+			}
+		]
+	}
+}
