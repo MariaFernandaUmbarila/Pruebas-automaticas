@@ -25,7 +25,7 @@ class TestCP001a():
       data = pd.read_csv(directorio)
       contador = 0
       log = []
-      url = "https://tucan.toolsincloud.net/"
+      url = "http://localhost:8080/twitter-clone/index.php"
 
       #Para cada dato en el archivo CSV
       for n, u, e, p in zip(data['name'], data['username'], data['email'], data['password']):
