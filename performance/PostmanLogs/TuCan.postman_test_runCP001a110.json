@@ -1,0 +1,489 @@
+{
+	"id": "fa15690b-57a9-4ceb-a701-cde9cea2a76b",
+	"name": "TuCan",
+	"timestamp": "2023-05-15T20:26:57.677Z",
+	"collection_id": "22914286-ddb7dabe-0177-4036-8cab-fce717134490",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 110,
+	"delay": "1000",
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2023-05-15T20:23:04.336Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "5d2a1e91-6f43-4682-9f5c-3e505b22ebad",
+			"name": "CP001a",
+			"url": "http://localhost:8080/twitter-clone/handle/handleSignUp.php",
+			"time": 966,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 110,
+					"fail": 0
+				}
+			},
+			"times": [
+				888,
+				894,
+				954,
+				922,
+				916,
+				946,
+				933,
+				951,
+				951,
+				922,
+				968,
+				954,
+				968,
+				968,
+				967,
+				949,
+				953,
+				903,
+				901,
+				933,
+				953,
+				950,
+				937,
+				966,
+				919,
+				949,
+				803,
+				887,
+				718,
+				953,
+				955,
+				973,
+				951,
+				967,
+				968,
+				953,
+				970,
+				968,
+				967,
+				969,
+				954,
+				968,
+				968,
+				967,
+				965,
+				968,
+				964,
+				858,
+				934,
+				963,
+				982,
+				983,
+				947,
+				983,
+				868,
+				917,
+				956,
+				927,
+				921,
+				953,
+				948,
+				981,
+				961,
+				949,
+				967,
+				987,
+				962,
+				952,
+				971,
+				981,
+				983,
+				935,
+				965,
+				967,
+				934,
+				939,
+				919,
+				677,
+				968,
+				934,
+				983,
+				953,
+				965,
+				953,
+				995,
+				963,
+				934,
+				967,
+				979,
+				964,
+				969,
+				968,
+				962,
+				948,
+				968,
+				979,
+				963,
+				962,
+				969,
+				951,
+				949,
+				952,
+				968,
+				967,
+				979,
+				963,
+				978,
+				966,
+				940,
+				966
+			],
+			"allTests": [
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				},
+				{
+					"Body matches string": true
+				}
+			]
+		}
+	],
+	"count": 110,
+	"totalTime": 104166,
+	"collection": {
+		"requests": [
+			{
+				"id": "5d2a1e91-6f43-4682-9f5c-3e505b22ebad",
+				"method": "POST"
+			}
+		]
+	}
+}

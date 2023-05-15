@@ -6,7 +6,7 @@
 	"folder_id": 0,
 	"environment_id": "0",
 	"totalPass": 10,
-	"delay": "1000",
+	"delay": 1000,
 	"persist": true,
 	"status": "finished",
 	"startedAt": "2023-05-15T17:25:43.202Z",

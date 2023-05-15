@@ -22,7 +22,12 @@
 				"name": "OK"
 			},
 			"tests": {},
-			"testPassFailCounts": {},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 10,
+					"fail": 0
+				}
+			},
 			"times": [
 				292,
 				374,
