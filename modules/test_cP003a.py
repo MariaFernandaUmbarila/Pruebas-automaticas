@@ -9,6 +9,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import *
 import pandas as pd
 import os, csv
+import time
 
 #Publicación de un Squawk válido por parte del usuario
 class TestCP003a():
@@ -23,7 +24,7 @@ class TestCP003a():
     data = pd.read_csv(directorio)
     contador = 0
     log = []
-    url = "https://tucan.toolsincloud.net/"
+    url = "http://localhost:8080/twitter-clone/"
 
     #Para cada dato en el archivo CSV
     for e, p, t in zip(data['email'], data['password'], data['text']):
@@ -33,6 +34,10 @@ class TestCP003a():
       self.driver.get(url)
       #Maximizar ventana
       self.driver.maximize_window()
+
+      #Para tiempos de respuesta
+      navigationStart = self.driver.execute_script("return window.performance.timing.navigationStart")
+      responseStart = self.driver.execute_script("return window.performance.timing.responseStart")
 
       #Valores de la columna email
       self.driver.find_element(By.NAME, "email").click()
@@ -63,7 +68,8 @@ class TestCP003a():
             contador,
             'Fallida', 
             'No se realizo la publicacion', 
-            f'{e}-{p}-{t}']
+            f'{e}-{p}-{t}',
+            responseStart - navigationStart]            
           )          
 
         except NoSuchElementException:  
@@ -73,7 +79,8 @@ class TestCP003a():
             contador,
             'Exitosa', 
             'Publicacion realizada', 
-            f'{e}-{p}-{t}']
+            f'{e}-{p}-{t}',
+            responseStart - navigationStart]            
           )                    
 
         self.driver.find_element(By.CSS_SELECTOR, ".fa-sign-out-alt").click()
@@ -85,7 +92,8 @@ class TestCP003a():
           contador,
           'Fallida', 
           'Login de usuario fallido', 
-          f'{e}-{p}-{t}']
+          f'{e}-{p}-{t}',
+          responseStart - navigationStart]
         )
 
         continue 
@@ -97,12 +105,17 @@ class TestCP003a():
 
     nuevaInstancia = TestCP003a()
     nuevaInstancia.setup_method()
+
+    inicio = time.time()
     ejecucion = nuevaInstancia.test_cP003a()
+    fin = time.time()
 
     with open('./results/result_cp003a.csv', 'w+', newline='') as file:
       
       writer = csv.writer(file)
-      writer.writerow(['Ejecucion', 'Resultado', 'Detalle', 'DatosUsados'])
+      writer.writerow(['Ejecucion', 'Resultado', 'Detalle', 'DatosUsados', 'TiempoRes'])
 
       for i in ejecucion:
-        writer.writerow([i[0], i[1], i[2], i[3]])
+        writer.writerow([i[0], i[1], i[2], i[3], i[4]])
+
+    return fin - inicio

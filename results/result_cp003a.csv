@@ -1,11 +1,2 @@
-Ejecucion,Resultado,Detalle,DatosUsados
-1,Exitosa,Publicacion realizada,casoprueba850@software.com-PruebaTuCan-Un caso de prueba para ingenieria de software III Chrome 850
-2,Exitosa,Publicacion realizada,casoprueba851@software.com-PruebaTuCan-Un caso de prueba para ingenieria de software III Chrome 851
-3,Exitosa,Publicacion realizada,casoprueba852@software.com-PruebaTuCan-Un caso de prueba para ingenieria de software III Chrome 852
-4,Exitosa,Publicacion realizada,casoprueba853@software.com-PruebaTuCan-Un caso de prueba para ingenieria de software III Chrome 853
-5,Exitosa,Publicacion realizada,casoprueba854@software.com-PruebaTuCan-Un caso de prueba para ingenieria de software III Chrome 854
-6,Exitosa,Publicacion realizada,casoprueba855@software.com-PruebaTuCan-Un caso de prueba para ingenieria de software III Chrome 855
-7,Exitosa,Publicacion realizada,casoprueba856@software.com-PruebaTuCan-Un caso de prueba para ingenieria de software III Chrome 856
-8,Exitosa,Publicacion realizada,casoprueba857@software.com-PruebaTuCan-Un caso de prueba para ingenieria de software III Chrome 857
-9,Exitosa,Publicacion realizada,casoprueba858@software.com-PruebaTuCan-Un caso de prueba para ingenieria de software III Chrome 858
-10,Exitosa,Publicacion realizada,casoprueba859@software.com-PruebaTuCan-Un caso de prueba para ingenieria de software III Chrome 859
+Ejecucion,Resultado,Detalle,DatosUsados,TiempoRes
+1,Exitosa,Publicacion realizada,casoprueba0@software.com-PruebaTuCan-Un caso de prueba para ingenieria de software III Chrome 0,13

@@ -1,11 +1,2 @@
-Ejecucion,Resultado,Detalle,DatosUsados
-1,Exitosa,Publicacion no realizada,casoprueba850@software.com-PruebaTuCan-nan
-2,Exitosa,Publicacion no realizada,casoprueba851@software.com-PruebaTuCan-nan
-3,Exitosa,Publicacion no realizada,casoprueba852@software.com-PruebaTuCan-nan
-4,Exitosa,Publicacion no realizada,casoprueba853@software.com-PruebaTuCan-nan
-5,Exitosa,Publicacion no realizada,casoprueba854@software.com-PruebaTuCan-nan
-6,Exitosa,Publicacion no realizada,casoprueba855@software.com-PruebaTuCan-nan
-7,Exitosa,Publicacion no realizada,casoprueba856@software.com-PruebaTuCan-nan
-8,Exitosa,Publicacion no realizada,casoprueba857@software.com-PruebaTuCan-nan
-9,Exitosa,Publicacion no realizada,casoprueba858@software.com-PruebaTuCan-nan
-10,Exitosa,Publicacion no realizada,casoprueba859@software.com-PruebaTuCan-nan
+Ejecucion,Resultado,Detalle,DatosUsados,TiempoRes
+1,Exitosa,Publicacion no realizada,casoprueba0@software.com-PruebaTuCan-nan,32
