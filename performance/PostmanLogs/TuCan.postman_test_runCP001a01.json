@@ -1,0 +1,53 @@
+{
+	"id": "79f893d1-76f4-4b46-920a-116442712969",
+	"name": "TuCan",
+	"timestamp": "2023-05-17T12:19:56.255Z",
+	"collection_id": "22914286-ddb7dabe-0177-4036-8cab-fce717134490",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 1,
+	"delay": 1000,
+	"persist": false,
+	"status": "finished",
+	"startedAt": "2023-05-17T12:19:52.535Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "5d2a1e91-6f43-4682-9f5c-3e505b22ebad",
+			"name": "CP001a",
+			"url": "http://localhost:8080/twitter-clone/handle/handleSignUp.php",
+			"time": 636,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Body matches string": true
+			},
+			"testPassFailCounts": {
+				"Body matches string": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				636
+			],
+			"allTests": [
+				{
+					"Body matches string": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 636,
+	"collection": {
+		"requests": [
+			{
+				"id": "5d2a1e91-6f43-4682-9f5c-3e505b22ebad",
+				"method": "POST"
+			}
+		]
+	}
+}
