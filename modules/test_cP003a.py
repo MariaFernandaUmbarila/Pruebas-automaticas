@@ -83,7 +83,7 @@ class TestCP003a():
             responseStart - navigationStart]            
           )                    
 
-        self.driver.find_element(By.CSS_SELECTOR, ".fa-sign-out-alt").click()
+          self.driver.find_element(By.CSS_SELECTOR, ".fa-sign-out-alt").click()
       
       except NoSuchElementException:  
 
