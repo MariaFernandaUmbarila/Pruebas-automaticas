@@ -99,6 +99,7 @@ class TestCP004a():
           responseStart - navigationStart]
         )
 
+        self.driver.find_element(By.CSS_SELECTOR, ".fa-sign-out-alt").click()
         continue      
   
     return log

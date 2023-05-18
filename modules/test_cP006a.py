@@ -9,7 +9,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import *
 import pandas as pd
 import os, csv
-import ime
+import time
 
 #Cambio de contraseña de usuario por una contraseña válida
 class TestCP006a():
