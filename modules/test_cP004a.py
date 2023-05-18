@@ -9,6 +9,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import *
 import pandas as pd
 import os, csv
+import time
 
 #Cambio de nombre de usuario por uno no registrado previamente
 class TestCP004a():
@@ -23,7 +24,7 @@ class TestCP004a():
     data = pd.read_csv(directorio)
     contador = 0
     log = []
-    url = "https://tucan.toolsincloud.net/"
+    url = "http://localhost:8080/twitter-clone/"
 
     #Para cada dato en el archivo CSV
     for e, p, u in zip(data['email'], data['password'], data['username']):
@@ -33,6 +34,10 @@ class TestCP004a():
       self.driver.get(url)
       #Maximizar ventana
       self.driver.maximize_window()
+
+      #Para tiempos de respuesta
+      navigationStart = self.driver.execute_script("return window.performance.timing.navigationStart")
+      responseStart = self.driver.execute_script("return window.performance.timing.responseStart")
 
       #Valores de la columna email
       self.driver.find_element(By.NAME, "email").click()        
@@ -64,7 +69,8 @@ class TestCP004a():
             contador,
             'Exitosa', 
             'Nombre de usuario ha sido modificado', 
-            f'{e}-{p}-{u}']
+            f'{e}-{p}-{u}',
+            responseStart - navigationStart]
           )  
 
         else:
@@ -74,7 +80,8 @@ class TestCP004a():
             contador,
             'Fallida', 
             'Nombre de usuario no fue cambiado', 
-            f'{e}-{p}-{u}']
+            f'{e}-{p}-{u}',
+            responseStart - navigationStart]
           )
 
         #Esperar para que el elemento siguiente aparezca en pantalla
@@ -88,7 +95,8 @@ class TestCP004a():
           contador,
           'Fallida', 
           'Login de usuario fallido', 
-          f'{e}-{p}-{u}']
+          f'{e}-{p}-{u}',
+          responseStart - navigationStart]
         )
 
         continue      
@@ -100,12 +108,17 @@ class TestCP004a():
 
     nuevaInstancia = TestCP004a()
     nuevaInstancia.setup_method()
+
+    inicio = time.time()
     ejecucion = nuevaInstancia.test_cP004a()
+    fin = time.time()
 
     with open('./results/result_cp004a.csv', 'w+', newline='') as file:
       
       writer = csv.writer(file)
-      writer.writerow(['Ejecucion', 'Resultado', 'Detalle', 'DatosUsados'])
+      writer.writerow(['Ejecucion', 'Resultado', 'Detalle', 'DatosUsados', 'TiempoRes'])
 
       for i in ejecucion:
-        writer.writerow([i[0], i[1], i[2], i[3]])
+        writer.writerow([i[0], i[1], i[2], i[3], i[4]])
+
+    return fin - inicio

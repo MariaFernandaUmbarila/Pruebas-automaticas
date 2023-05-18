@@ -10,6 +10,7 @@ from selenium.common.exceptions import *
 import pandas as pd
 import os, csv, time
 import pyautogui
+import time
 
 #Cambio de foto de perfil por una foto no válida
 class TestCP005b():
@@ -24,7 +25,7 @@ class TestCP005b():
     data = pd.read_csv(directorio)
     contador = 0
     log = []
-    url = "https://tucan.toolsincloud.net/"
+    url = "http://localhost:8080/twitter-clone/"
 
     #Para cada dato en el archivo CSV
     for e, p, r in zip(data['email'], data['password'], data['route']):
@@ -34,6 +35,10 @@ class TestCP005b():
       self.driver.get(url)
       #Maximizar ventana
       self.driver.maximize_window()
+
+      #Para tiempos de respuesta
+      navigationStart = self.driver.execute_script("return window.performance.timing.navigationStart")
+      responseStart = self.driver.execute_script("return window.performance.timing.responseStart")
 
       #Valores de la columna email
       self.driver.find_element(By.NAME, "email").click()
@@ -66,7 +71,8 @@ class TestCP005b():
             contador,
             'Exitosa', 
             'No se realizo el cambio de imagen de perfil', 
-            f'{e}-{p}-{r}']
+            f'{e}-{p}-{r}',
+            responseStart - navigationStart]
           )
 
           pyautogui.hotkey('esc')          
@@ -83,7 +89,8 @@ class TestCP005b():
             contador,
             'Fallida', 
             'Imagen de usuario fue modificada', 
-            f'{e}-{p}-{r}']
+            f'{e}-{p}-{r}',
+            responseStart - navigationStart]
           ) 
 
           continue                   
@@ -95,7 +102,8 @@ class TestCP005b():
           contador,
           'Fallida', 
           'Login de usuario exitoso pero usuario no existe', 
-          f'{e}-{p}']
+          f'{e}-{p}',
+          responseStart - navigationStart]
         )
 
         continue
@@ -107,12 +115,17 @@ class TestCP005b():
 
     nuevaInstancia = TestCP005b()
     nuevaInstancia.setup_method()
+
+    inicio = time.time()
     ejecucion = nuevaInstancia.test_cP005b()
+    fin = time.time()
 
     with open('./results/result_cp005b.csv', 'w+', newline='') as file:
       
       writer = csv.writer(file)
-      writer.writerow(['Ejecucion', 'Resultado', 'Detalle', 'DatosUsados'])
+      writer.writerow(['Ejecucion', 'Resultado', 'Detalle', 'DatosUsados', 'TiempoRes'])
 
       for i in ejecucion:
-        writer.writerow([i[0], i[1], i[2], i[3]])
+        writer.writerow([i[0], i[1], i[2], i[3], i[4]])
+
+    return fin - inicio

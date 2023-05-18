@@ -9,6 +9,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import *
 import pandas as pd
 import os, csv
+import time
 
 #Cambio de contraseña de usuario por una contraseña no válida
 class TestCP006b():
@@ -23,7 +24,7 @@ class TestCP006b():
     data = pd.read_csv(directorio)
     contador = 0
     log = []
-    url = "https://tucan.toolsincloud.net/"
+    url = "http://localhost:8080/twitter-clone/"
 
     #Para cada dato en el archivo CSV
     for e, p, n in zip(data['email'], data['password'], data['new']):
@@ -33,6 +34,10 @@ class TestCP006b():
       self.driver.get(url)
       #Maximizar ventana
       self.driver.maximize_window()
+
+      #Para tiempos de respuesta
+      navigationStart = self.driver.execute_script("return window.performance.timing.navigationStart")
+      responseStart = self.driver.execute_script("return window.performance.timing.responseStart")
 
       #Esperar para que el elemento siguiente aparezca en pantalla
       self.driver.implicitly_wait(2)
@@ -79,7 +84,8 @@ class TestCP006b():
             contador,
             'Exitosa', 
             'Password no se cambio', 
-            f'{e}-{p}-{n}']
+            f'{e}-{p}-{n}',
+            responseStart - navigationStart]
           )
 
           self.driver.find_element(By.CSS_SELECTOR, ".fa-sign-out-alt").click()
@@ -96,7 +102,8 @@ class TestCP006b():
           contador,
           'Fallida', 
           'Login de usuario exitoso pero usuario no existe', 
-          f'{e}-{p}']
+          f'{e}-{p}',
+          responseStart - navigationStart]
         )
 
         continue
@@ -108,12 +115,17 @@ class TestCP006b():
 
     nuevaInstancia = TestCP006b()
     nuevaInstancia.setup_method()
+
+    inicio = time.time()
     ejecucion = nuevaInstancia.test_cP006b()
+    fin = time.time()
 
     with open('./results/result_cp006b.csv', 'w+', newline='') as file:
       
       writer = csv.writer(file)
-      writer.writerow(['Ejecucion', 'Resultado', 'Detalle', 'DatosUsados'])
+      writer.writerow(['Ejecucion', 'Resultado', 'Detalle', 'DatosUsados', 'TiempoRes'])
 
       for i in ejecucion:
-        writer.writerow([i[0], i[1], i[2], i[3]])
+        writer.writerow([i[0], i[1], i[2], i[3], i[4]])
+
+    return fin - inicio

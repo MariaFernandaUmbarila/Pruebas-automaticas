@@ -9,6 +9,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import *
 import pandas as pd
 import os, csv
+import ime
 
 #Cambio de contraseña de usuario por una contraseña válida
 class TestCP006a():
@@ -23,7 +24,7 @@ class TestCP006a():
     data = pd.read_csv(directorio)
     contador = 0
     log = []
-    url = "https://tucan.toolsincloud.net/"
+    url = "http://localhost:8080/twitter-clone/"
 
     #Para cada dato en el archivo CSV
     for e, p, n in zip(data['email'], data['password'], data['new']):
@@ -33,6 +34,11 @@ class TestCP006a():
       self.driver.get(url)
       #Maximizar ventana
       self.driver.maximize_window()
+
+      #Para tiempos de respuesta
+      navigationStart = self.driver.execute_script("return window.performance.timing.navigationStart")
+      responseStart = self.driver.execute_script("return window.performance.timing.responseStart")
+
       #Valores de la columna email
       self.driver.find_element(By.NAME, "email").click()
       self.driver.find_element(By.NAME, "email").send_keys(e)
@@ -72,7 +78,8 @@ class TestCP006a():
             contador,
             'Fallida', 
             'No se cambio el password', 
-            f'{e}-{p}-{n}']
+            f'{e}-{p}-{n}',
+            responseStart - navigationStart]
           )
         
         except NoSuchElementException: 
@@ -101,7 +108,8 @@ class TestCP006a():
               contador,
               'Exitosa', 
               'Password se cambio correctamente', 
-              f'{e}-{p}-{n}']
+              f'{e}-{p}-{n}',
+              responseStart - navigationStart]
             )
 
           except NoSuchElementException: 
@@ -111,7 +119,8 @@ class TestCP006a():
               contador,
               'Fallida', 
               'No se cambio el password', 
-              f'{e}-{p}-{n}']
+              f'{e}-{p}-{n}',
+              responseStart - navigationStart]
             )    
 
             continue   
@@ -123,7 +132,8 @@ class TestCP006a():
           contador,
           'Fallida', 
           'Login de usuario exitoso pero usuario no existe', 
-          f'{e}-{p}']
+          f'{e}-{p}',
+          responseStart - navigationStart]
         )
 
         continue
@@ -135,12 +145,17 @@ class TestCP006a():
 
     nuevaInstancia = TestCP006a()
     nuevaInstancia.setup_method()
+
+    inicio = time.time()
     ejecucion = nuevaInstancia.test_cP006a()
+    fin = time.time()
 
     with open('./results/result_cp006a.csv', 'w+', newline='') as file:
       
       writer = csv.writer(file)
-      writer.writerow(['Ejecucion', 'Resultado', 'Detalle', 'DatosUsados'])
+      writer.writerow(['Ejecucion', 'Resultado', 'Detalle', 'DatosUsados', 'TiempoRes'])
 
       for i in ejecucion:
-        writer.writerow([i[0], i[1], i[2], i[3]])
+        writer.writerow([i[0], i[1], i[2], i[3], i[4]])
+
+    return fin - inicio
