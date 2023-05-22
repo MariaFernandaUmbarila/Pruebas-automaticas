@@ -1,0 +1,4 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,SampleCount,ErrorCount,IdleTime,Connect
+1684712787179,19,Login,200,OK,CP002a 1-1,text,true,,6645,733,1,1,http://localhost:8080/twitter-clone/index.php,13,1,0,0,1
+1684712787179,13,Login-0,302,Found,CP002a 1-1,text,true,,447,591,1,1,http://localhost:8080/twitter-clone/handle/handlelogin.php,13,1,0,0,1
+1684712787192,6,Login-1,200,OK,CP002a 1-1,text,true,,6198,142,1,1,http://localhost:8080/twitter-clone/index.php,6,1,0,0,0
